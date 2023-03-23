@@ -88,9 +88,9 @@ function print_main_img() {
     const markup_img = `
     <div class="col-10 d-flex justify-content-end">
         <div class="card">
-            <img class="card-img-top" src="${path_img()}0${j}.webp" alt="">
-            <h3>${images[j - 1].title}</h3>
-            <h5>${images[j - 1].text}</h5>
+            <img class="card-img-top" src="${path_img()}0${click_change_img}.webp" alt="">
+            <h3>${images[click_change_img - 1].title}</h3>
+            <h5>${images[click_change_img - 1].text}</h5>
         </div>
     </div>` 
     container_main_img.insertAdjacentHTML('afterbegin', markup_img)
