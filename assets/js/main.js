@@ -129,11 +129,11 @@ btn_play_el.addEventListener('click', function() {
     
     
     if(play_on_off == 0) {
-        play += 1
+        play_on_off += 1
         btn_play_el.innerHTML = '<i class="fa-solid fa-circle-pause fa-xl"></i>'
         autochange_img = setInterval(print_interval, 3000)
     } else {
-        play -= 1
+        play_on_off -= 1
         btn_play_el.innerHTML = '<i class="fa-solid fa-circle-play fa-xl"></i>'
         clearInterval(autochange_img)
     }
