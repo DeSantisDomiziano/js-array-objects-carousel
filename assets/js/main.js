@@ -57,10 +57,6 @@ const images = [
     }
 ];
 
-
-
-
-
 function print_img(array_img, where_to_put) {
 
     for(let i = 0; i < array_img.length; i++) {
@@ -119,9 +115,9 @@ btn_down_el.addEventListener('click', function() {
 })
 
 function print_interval() {
-    j -= 1
-    if(j <= 0) {
-        j = images.length 
+    click_change_img -= 1
+    if(click_change_img <= 0) {
+        click_change_img = images.length 
     }
     
     print_main_img()
