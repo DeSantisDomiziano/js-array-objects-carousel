@@ -1,0 +1,24 @@
+.col-10 {
+    max-height: 745px;
+}
+
+.col-10 > img {
+    height: 100%;
+}
+
+i {
+    color: #ffffff;
+    padding: 1.5rem;
+    background-color: #00000091;
+    border-radius: 50%;
+}
+
+#up {
+   top: 0;
+   left: 0; 
+}
+
+#down {
+    bottom: 0;
+    left: 0;
+}
