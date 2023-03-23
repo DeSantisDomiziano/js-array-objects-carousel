@@ -47,6 +47,9 @@ const images = [
     }
 ];
 
+
+console.log(images[4].title);
+
 const container_main_img = document.querySelector('.row')
 const container_thumbnail_img = document.querySelector('.row.g-2')
 const btn_up_el = document.getElementById('up')
@@ -73,6 +76,22 @@ function path_img() {
 print_img(images, container_thumbnail_img)
 
 
+function print_main_img() {
+    const active = document.querySelector('.col-10')
+    active.classList.add('d-none')
+    
+    const markup_img = `
+    <div class="col-10 d-flex justify-content-end">
+        <div class="card">
+            <img class="card-img-top" src="${path_img()}0${j}.webp" alt="">
+            <h3>${images[j - 1].title}</h3>
+            <h5>${images[j - 1].text}</h5>
+        </div>
+    </div>` 
+    container_main_img.insertAdjacentHTML('afterbegin', markup_img)
+}
+
+
 let j = 0
 btn_up_el.addEventListener('click', function() {
 
@@ -94,14 +113,3 @@ btn_down_el.addEventListener('click', function() {
     print_main_img()
 })
 
-function print_main_img() {
-    const active = document.querySelector('.col-10')
-    active.classList.add('d-none')
-
-    const markup_img = `
-    <div class="col-10 d-flex justify-content-end">
-        <img class="img-fluid" src="${path_img()}0${j}.webp" alt="">
-    </div>`
-    
-    container_main_img.insertAdjacentHTML('afterbegin', markup_img)
-}
