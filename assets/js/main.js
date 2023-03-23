@@ -93,6 +93,7 @@ function print_main_img() {
 
 
 let j = 0
+
 btn_up_el.addEventListener('click', function() {
 
     j -= 1
@@ -113,3 +114,13 @@ btn_down_el.addEventListener('click', function() {
     print_main_img()
 })
 
+function print_interval() {
+    j -= 1
+    if(j <= 0) {
+        j = images.length 
+    }
+    
+    print_main_img()
+}
+
+setInterval(print_interval, 3000) 
