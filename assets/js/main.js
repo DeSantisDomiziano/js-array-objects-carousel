@@ -121,15 +121,17 @@ function print_interval() {
     print_main_img()
 }
 
+
+let play = 0;
 btn_play_el.addEventListener('click', function() {
     
-    let play = 0
+    
     
     if(play == 0) {
-        play =+ 1
+        play += 1
         btn_play_el.innerHTML = '<i class="fa-solid fa-circle-pause fa-xl"></i>'
     } else {
-        play =- 1
+        play -= 1
         btn_play_el.innerHTML = '<i class="fa-solid fa-circle-play fa-xl"></i>'
     }
 })
