@@ -49,6 +49,8 @@ const images = [
 
 const container_main_img = document.querySelector('.row')
 const container_thumbnail_img = document.querySelector('.row.g-2')
+const btn_up_el = document.getElementById('up')
+const btn_down_el = document.getElementById('down')
 
 
 function print_img(array_img, where_to_put) {
@@ -68,5 +70,42 @@ function path_img() {
     return './assets/img/'
 }
 
-
 print_img(images, container_thumbnail_img)
+
+
+let j = 0
+btn_up_el.addEventListener('click', function() {
+
+    j -= 1
+    if(j <= 0) {
+        j = images.length 
+    }
+    
+    const active = document.querySelector('.col-10')
+    active.classList.add('d-none')
+
+    const markup_img = `
+    <div class="col-10 d-flex justify-content-end">
+        <img class="img-fluid" src="${path_img()}0${j}.webp" alt="">
+    </div>`
+    
+    container_main_img.insertAdjacentHTML('afterbegin', markup_img)
+})
+
+btn_down_el.addEventListener('click', function() {
+
+    j += 1
+    if(j > images.length ) {
+        j = 1
+    }
+    
+    const active = document.querySelector('.col-10')
+    active.classList.add('d-none')
+
+    const markup_img = `
+    <div class="col-10 d-flex justify-content-end">
+        <img class="img-fluid" src="${path_img()}0${j}.webp" alt="">
+    </div>`
+    
+    container_main_img.insertAdjacentHTML('afterbegin', markup_img)
+})
