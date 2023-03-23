@@ -81,15 +81,7 @@ btn_up_el.addEventListener('click', function() {
         j = images.length 
     }
     
-    const active = document.querySelector('.col-10')
-    active.classList.add('d-none')
-
-    const markup_img = `
-    <div class="col-10 d-flex justify-content-end">
-        <img class="img-fluid" src="${path_img()}0${j}.webp" alt="">
-    </div>`
-    
-    container_main_img.insertAdjacentHTML('afterbegin', markup_img)
+    print_main_img()
 })
 
 btn_down_el.addEventListener('click', function() {
@@ -99,6 +91,10 @@ btn_down_el.addEventListener('click', function() {
         j = 1
     }
     
+    print_main_img()
+})
+
+function print_main_img() {
     const active = document.querySelector('.col-10')
     active.classList.add('d-none')
 
@@ -108,4 +104,4 @@ btn_down_el.addEventListener('click', function() {
     </div>`
     
     container_main_img.insertAdjacentHTML('afterbegin', markup_img)
-})
+}
