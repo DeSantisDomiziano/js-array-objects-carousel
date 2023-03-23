@@ -19,6 +19,16 @@ BONUS 3:
 Aggiungere bottoni di start/stop e di inversione del meccanismo di autoplay.
 */
 
+const container_main_img = document.querySelector('.row')
+const container_thumbnail_img = document.querySelector('.row.g-2')
+const btn_up_el = document.getElementById('up')
+const btn_down_el = document.getElementById('down')
+const btn_play_el = document.getElementById('play')
+const miniature = document.querySelectorAll('.col-12')
+let click_change_img = 0
+let play_on_off = 0;
+let autochange_img;
+
 const images = [
     {
         image: 'img/01.webp',
@@ -47,11 +57,8 @@ const images = [
     }
 ];
 
-const container_main_img = document.querySelector('.row')
-const container_thumbnail_img = document.querySelector('.row.g-2')
-const btn_up_el = document.getElementById('up')
-const btn_down_el = document.getElementById('down')
-const btn_play_el = document.getElementById('play')
+
+
 
 
 function print_img(array_img, where_to_put) {
@@ -90,13 +97,12 @@ function print_main_img() {
 }
 
 
-let j = 0
 
 btn_up_el.addEventListener('click', function() {
 
-    j -= 1
-    if(j <= 0) {
-        j = images.length 
+    click_change_img -= 1
+    if(click_change_img <= 0) {
+        click_change_img = images.length 
     }
     
     print_main_img()
@@ -104,9 +110,9 @@ btn_up_el.addEventListener('click', function() {
 
 btn_down_el.addEventListener('click', function() {
 
-    j += 1
-    if(j > images.length ) {
-        j = 1
+    click_change_img += 1
+    if(click_change_img > images.length ) {
+        click_change_img = 1
     }
     
     print_main_img()
@@ -122,12 +128,11 @@ function print_interval() {
 }
 
 
-let play = 0;
-let autochange_img;
+
 btn_play_el.addEventListener('click', function() {
     
     
-    if(play == 0) {
+    if(play_on_off == 0) {
         play += 1
         btn_play_el.innerHTML = '<i class="fa-solid fa-circle-pause fa-xl"></i>'
         autochange_img = setInterval(print_interval, 3000)
@@ -138,4 +143,3 @@ btn_play_el.addEventListener('click', function() {
     }
 })
 
-   
