@@ -47,13 +47,11 @@ const images = [
     }
 ];
 
-
-console.log(images[4].title);
-
 const container_main_img = document.querySelector('.row')
 const container_thumbnail_img = document.querySelector('.row.g-2')
 const btn_up_el = document.getElementById('up')
 const btn_down_el = document.getElementById('down')
+const btn_play_el = document.getElementById('play')
 
 
 function print_img(array_img, where_to_put) {
@@ -123,4 +121,17 @@ function print_interval() {
     print_main_img()
 }
 
-setInterval(print_interval, 3000) 
+btn_play_el.addEventListener('click', function() {
+    
+    let play = 0
+    
+    if(play == 0) {
+        play =+ 1
+        btn_play_el.innerHTML = '<i class="fa-solid fa-circle-pause fa-xl"></i>'
+    } else {
+        play =- 1
+        btn_play_el.innerHTML = '<i class="fa-solid fa-circle-play fa-xl"></i>'
+    }
+})
+
+/* setInterval(print_interval, 3000)  */
