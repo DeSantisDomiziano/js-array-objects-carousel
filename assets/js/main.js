@@ -123,17 +123,19 @@ function print_interval() {
 
 
 let play = 0;
+let autochange_img;
 btn_play_el.addEventListener('click', function() {
-    
     
     
     if(play == 0) {
         play += 1
         btn_play_el.innerHTML = '<i class="fa-solid fa-circle-pause fa-xl"></i>'
+        autochange_img = setInterval(print_interval, 3000)
     } else {
         play -= 1
         btn_play_el.innerHTML = '<i class="fa-solid fa-circle-play fa-xl"></i>'
+        clearInterval(autochange_img)
     }
 })
 
-/* setInterval(print_interval, 3000)  */
+   

@@ -18,10 +18,10 @@ i {
 #play{
     color: rgb(255, 255, 255);
     z-index: 1;
-    top: 5px;
-    left: 50%;
+    bottom: -80px;
+    left: 0;
 }
 
 #play > i {
-    background-color: transparent;
+    /* background-color: transparent; */
 }
